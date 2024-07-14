@@ -14,7 +14,7 @@ function bubbleSort(arr) {
       iterationCounter++;
     }
   }
-  console.log("Iteration couter: " + iterationCounter);
+  console.log("Iteration counter: " + iterationCounter);
   return arr;
 }
 

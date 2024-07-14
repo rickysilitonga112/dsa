@@ -9,7 +9,7 @@ function binarySearch(arr, element) {
     if (element < arr[middle]) end = middle - 1;
     else start = middle + 1;
 
-    // set agai the midle
+    // set again the middle
     middle = Math.floor((start + end) / 2);
   }
   return arr[middle] == element ? middle : -1;
