@@ -31,12 +31,22 @@ class SinglyLinkedList {
 
   pop() {
     if (this.head == null) return undefined;
-    let temp = this.tail;
-    let current = this.tail;
-    while (current) {
-      current = this.tail.next;
+    var current = this.head;
+    var newTail = current;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
     }
-    this.tail = current;
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
 }
 
@@ -44,4 +54,5 @@ let first = new SinglyLinkedList();
 first.push("Hello");
 first.push("Goodby");
 first.push("!");
+first.pop();
 console.log(first);
